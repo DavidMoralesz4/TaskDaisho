@@ -1,0 +1,32 @@
+.container-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  div {
+    width: auto;
+    h3{
+      cursor: pointer;
+    } 
+    p {
+      cursor: pointer;
+    }
+  }
+  .container-check {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 10px;
+
+    .check {
+      label {
+        padding-left: 7px;
+      }
+      input {
+        cursor: pointer;
+      }
+    }
+  }
+}
