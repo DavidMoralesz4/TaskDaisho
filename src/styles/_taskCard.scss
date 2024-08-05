@@ -1,7 +1,8 @@
 .container-primary {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  
   div {
     width: auto;
     h3{
@@ -12,9 +13,11 @@
     }
   }
   .container-check {
-
     display: flex;
     flex-direction: row;
+    position: relative;
+    bottom: 25px;
+    margin-left: 50px;
     align-items: center;
     justify-content: space-between;
     gap: 10px;

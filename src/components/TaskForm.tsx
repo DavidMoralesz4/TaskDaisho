@@ -8,7 +8,6 @@ type Props = {
   onClose: () => void;
 };
 
-
 const TaskForm = ({ active, onClose }: Props) => {
   const [inputs, setInputs] = useState<Task>({
     title: "",
@@ -19,7 +18,7 @@ const TaskForm = ({ active, onClose }: Props) => {
 
   if (!active) return <></>;
 
-  const handleInputsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputsChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setInputs({
       ...inputs,
@@ -30,9 +29,9 @@ const TaskForm = ({ active, onClose }: Props) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    dispatch(addTask({title: inputs.title, description: inputs.description}));
-    onClose()
-    setInputs({title: '', description: ''})
+    dispatch(addTask({ title: inputs.title, description: inputs.description }));
+    onClose();
+    setInputs({ title: "", description: "" });
   };
 
   return (
@@ -44,7 +43,7 @@ const TaskForm = ({ active, onClose }: Props) => {
             <hr />
 
             <div className="container-modal3">
-              <div>
+              <div className="container-1">
                 <label className="form-label mt-4">Enter name for task</label>
                 <input
                   type="text"
@@ -57,9 +56,9 @@ const TaskForm = ({ active, onClose }: Props) => {
                 />
               </div>
 
-              <div>
-                <label className="form-label mt-4">Description:</label>
-                <input
+              <div className="container-2">
+                <label className="form-label mt-4">Description: </label>
+                <textarea
                   className="form-control"
                   data-lt-tmp-id="lt-894152"
                   value={inputs.description}
@@ -67,18 +66,18 @@ const TaskForm = ({ active, onClose }: Props) => {
                   onChange={(event) => handleInputsChange(event)}
                   data-gramm="false"
                   placeholder="Enter a description..."
-                ></input>
+                ></textarea>
               </div>
 
-              <div>
-                <label htmlFor="image">Upload Image:</label>
-                <input
-                  type="file"
-                  id="image"
-                  accept="image/*"
-                  // onChange={handleFileChange}
-                />
-              </div>
+              <div className="container-3">
+                  <label htmlFor="image">Upload Image:</label>
+                  <input
+                    type="file"
+                    id="image"
+                    accept="image/*"
+                    // onChange={handleFileChange}
+                  />
+                </div>
             </div>
 
             <div className="button">

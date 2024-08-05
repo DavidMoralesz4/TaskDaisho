@@ -4,15 +4,15 @@
 @use '_buttonAdd';
 @use 'taskForm';
 @use 'createTask';
+@use 'viewports';
 
-$primary-color: #3498db;
+// $primary-color: #3498db;
 
 .app {
-  background-color: $primary-color;
+  // background-color: $primary-color;
   color: white;
   padding: 0px;
   border-radius: 5px;
-  height: 100%;
   .container-search {
     display: flex;
     flex-direction: column;
@@ -20,18 +20,21 @@ $primary-color: #3498db;
     align-items: center;
     padding-bottom: 30px;
   }
-
   .container-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 25px;
+    padding-top: 24px;
   }
   main{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    h4 {
+      text-align: center;
+    }
   }
   
 }

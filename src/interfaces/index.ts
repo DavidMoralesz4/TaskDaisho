@@ -9,4 +9,11 @@ export interface TaskState {
   tasks: Task[];
 }
 
+export interface TaskListProps {
+  tasks: Task[];
+}
+
+export interface PropsModalButton {
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
 

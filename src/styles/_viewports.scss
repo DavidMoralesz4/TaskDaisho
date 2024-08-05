@@ -1,0 +1,73 @@
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+@mixin for-mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (max-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+.container-tasks1 {
+  strong {
+    cursor: pointer;
+  }
+  @include for-mobile {
+    .container-primary {
+      display: flex;
+      flex-direction: column;
+      .container-check {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-left: 0;
+        position: relative;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.boxForm {
+  @include for-mobile {
+    .modalCreateTask {
+        .button {
+            position: relative;
+            top: 30px;
+        }
+      .container-modal3 {
+        
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: 0px;
+        .container-1 {
+          display: flex;
+          flex-direction: column;
+        }
+        .container-2 {
+          display: flex;
+          flex-direction: column;
+        }
+        .container-3 {
+          position: relative;
+          top: 20px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

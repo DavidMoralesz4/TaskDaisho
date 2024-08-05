@@ -1,11 +1,9 @@
-import React, {  } from "react";
+import React from "react";
 import TaskCard from "./TaskCard";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import { TaskListProps } from "../interfaces";
 
-const TaskList = () => {
-  const tasks = useSelector((state: RootState) => state.tasks.tasks);
-
+const TaskList = ({ tasks }:TaskListProps) => {
+  // const tasks = useSelector((state: RootState) => state.tasks.tasks);
   return (
     <>
       {tasks.map((task) => (

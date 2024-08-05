@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/layout.scss";
 import logo from "./logo.svg";
-import TaskList from "./components/TaskList";
 import { TaskSearch } from "./components/TaskSearch";
-import ButtonAdd from "./components/ButtonAdd";
 import TaskForm from "./components/TaskForm";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
@@ -15,9 +13,9 @@ interface Title {
 
 function App({ title }: Title) {
   const [active, setActive] = useState(false);
-  
+
   const tasks = useSelector((state: RootState) => state.tasks.tasks);
-  const { saveToLocalStorage, loading } = useLocalStorage("tasksState", []);
+  const { saveToLocalStorage } = useLocalStorage("tasksState", []);
 
   useEffect(() => {
     if (tasks.length > 0) {
@@ -30,7 +28,7 @@ function App({ title }: Title) {
   };
 
   return (
-    <div className="bg-dark text-white app" >
+    <div className="text-white app">
       {/* NavBar */}
       <nav className="navbar navbar-dark bg-primary">
         <div className="container ">
@@ -47,21 +45,12 @@ function App({ title }: Title) {
           routines, etc.
         </h4>
         <div className="container-search">
-          <TaskSearch />
-        </div>
-
-        <div className="container-bottom">
-          <ButtonAdd setActive={setActive} />
-        </div>
-
-        <div>
-          {
-            loading ? <p>Loading...</p> : ''
-          }
-          <TaskList />
+          <TaskSearch setActive={setActive} />
         </div>
       </main>
-      <TaskForm onClose={onClose} active={active} />
+      <div className="boxForm">
+        <TaskForm onClose={onClose} active={active} />
+      </div>
     </div>
   );
 }

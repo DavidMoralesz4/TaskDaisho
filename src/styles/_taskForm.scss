@@ -24,24 +24,28 @@
     padding: 50px;
     border-radius: 20px;
 
-    .container-modal3{
+    .container-modal3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      div {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      }
+      .container-3 {
+        input{
         }
+      }
     }
 
     .button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
     }
   }
 }
